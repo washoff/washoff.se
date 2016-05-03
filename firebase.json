@@ -1,0 +1,9 @@
+{
+  "firebase": "washoff",
+  "public": "lib",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
