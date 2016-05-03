@@ -1,9 +1,25 @@
-// TODO: Continue here. -MANI
-// import clientFactory from './client'
+import FooterFactory from
+  './components/footer/renderer'
+import MainMenuFactory from
+  './components/main-menu/renderer'
+import React from 'react'
+import ReactDom from 'react-dom'
+import ResponsiveContainerFactory from
+  './components/responsive-container/renderer'
 
 function main() {
-  // clientFactory.create()
-  document.querySelector('[data-app-title]').text = 'Wash Off'
+  const Footer = FooterFactory.create(React).render
+  const MainMenu = MainMenuFactory.create(React).render
+  const ResponsiveContainer = ResponsiveContainerFactory.create(React).render
+  ReactDom.render(
+    <ResponsiveContainer>
+      <MainMenu>
+      </MainMenu>
+      <Footer>
+      </Footer>
+    </ResponsiveContainer>,
+    document.querySelector('[data-app]')
+  )
 }
 
 main()

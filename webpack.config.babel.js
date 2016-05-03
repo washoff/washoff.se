@@ -1,4 +1,6 @@
+/* eslint-disable no-undef */
 module.exports = {
+/* eslint-enable no-undef */
   entry: './src/index.js',
   output: {
     path: 'lib',
