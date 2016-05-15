@@ -22,6 +22,9 @@ function create() {
     secondaryBackgroundColor: '#354458',
     secondaryBackgroundGradient:
       'linear-gradient(#354458, #313751)',
+    neutralSectionBackgroundColor: 'linear-gradient(#fff, #fff)',
+    section1BackgroundColor: 'linear-gradient(#ad9122, #96780d)',
+    section2BackgroundColor: 'linear-gradient(#354458, #313751)',
     primaryFontFamily: ['"Exo 2"', 'sans-serif'],
     secondaryFontFamily: ['"Exo 2"', 'sans-serif'],
     normalFontWeight: 400,
