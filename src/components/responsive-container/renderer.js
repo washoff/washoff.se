@@ -1,7 +1,15 @@
-function create(React) {
+function create(React, {css, StyleSheet}) {
+  const styles = StyleSheet.create({
+    responsiveContainer: {
+      '@media (min-width: 720px)': {
+        margin: 'auto',
+        width: 720
+      }
+    }
+  })
   function render({children}) {
     return (
-      <div>
+      <div className={css(styles.responsiveContainer)}>
         {children}
       </div>
     )

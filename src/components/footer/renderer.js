@@ -24,32 +24,42 @@ function create(React, {StyleSheet, css}, theme, HorizontalList, HorizontalListI
     footer: {
       color: theme.secondaryColor,
       background: theme.secondaryBackgroundGradient,
-      paddingTop: 50,
+      paddingTop: 25,
       paddingBottom: 50,
       paddingLeft: 15,
-      paddingRight: 15
+      paddingRight: 15,
+      textAlign: 'center'
+    },
+    title: {
+      marginBottom: 50,
+      fontSize: theme.extraLargeFontSize
     },
     icon: {
       margin: 5,
-      fontSize: theme.extraLargeFontSize,
+      fontSize: theme.normalFontSize * theme.iconMultiplier,
       verticalAlign: 'middle'
     }
   })
   function render() {
     return (
       <div className={css(styles.footer)}>
+        <h2 className={css(styles.title)}>Kontakt</h2>
         <HorizontalList>
         {data.map(function onMap(footerItemData) {
           return (
             <HorizontalListItem
             key={footerItemData.labelText}
             itemsCount={data.length}>
-              <i className={
-                `${css(styles.icon)} ${footerItemData.labelIcon}`
-              }>
-              </i>
               <Link linkHref={footerItemData.linkHref}>
-                {footerItemData.linkText}
+                <div>
+                  <i className={
+                    `${css(styles.icon)} ${footerItemData.labelIcon}`
+                  }>
+                  </i>
+                </div>
+                <div>
+                  {footerItemData.linkText}
+                </div>
               </Link>
             </HorizontalListItem>
           )

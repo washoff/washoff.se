@@ -23,10 +23,12 @@ function create() {
     secondaryBackgroundGradient:
       'linear-gradient(#354458, #313751)',
     primaryFontFamily: ['"Exo 2"', 'sans-serif'],
+    secondaryFontFamily: ['"Exo 2"', 'sans-serif'],
     normalFontWeight: 400,
     normalFontSize: 16,
     largeFontSize: 24,
-    extraLargeFontSize: 32
+    extraLargeFontSize: 32,
+    iconMultiplier: 2
   }
   return {
     theme

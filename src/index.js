@@ -17,13 +17,16 @@ import ResponsiveContainerFactory from
   './components/responsive-container/renderer'
 import ThemeFactory from
   './theme'
-import logotype from './logotype.png'
+// TODO: import logotype from './logotype.png'
 
 function main() {
   const theme = ThemeFactory.create().theme
   const styles = Aphrodite.StyleSheet.create({
     app: {
       fontFamily: theme.primaryFontFamily
+    },
+    quote: {
+      fontFamily: theme.secondaryFontFamily
     }
   })
   const HoristontalList = HoristontalListFactory.create(
@@ -45,10 +48,24 @@ function main() {
   ).render
   ReactDom.render(
     <div className={Aphrodite.css(styles.app)}>
-      <ResponsiveContainer>
         <MainMenu>
         </MainMenu>
+        <ResponsiveContainer>
         <MainSection>
+          <h1>
+            Wash Off
+          </h1>
+          <h2 className={Aphrodite.css(styles.quote)}>
+            För att bra kvalitet lönar sig i längden.
+          </h2>
+          <p>
+            Kort översiktstext.
+          </p>
+        </MainSection>
+        <MainSection>
+          <h2>
+            Tjänster
+          </h2>
           <div>
           <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin leo dolor, finibus et nibh in, finibus maximus eros. Nam nec egestas tortor. Maecenas rhoncus odio nec turpis iaculis tempus. Sed consequat eros in sem interdum fermentum. Sed maximus, orci at porttitor sagittis, neque nulla ornare nisl, non blandit diam ipsum et sapien. Nullam enim purus, laoreet ac hendrerit at, ullamcorper sed lectus. Nullam placerat erat a aliquet vehicula.
@@ -86,9 +103,9 @@ Suspendisse rhoncus in dolor ac ullamcorper. Sed vel placerat augue, nec tempus 
 </p>
           </div>
         </MainSection>
+        </ResponsiveContainer>
         <Footer>
         </Footer>
-      </ResponsiveContainer>
     </div>,
     document.querySelector('[data-app]')
   )
