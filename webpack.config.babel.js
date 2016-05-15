@@ -16,6 +16,11 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /.png?$/,
+        loader: 'file-loader',
+        exclude: /node_modules/
       }
     ]
   }
