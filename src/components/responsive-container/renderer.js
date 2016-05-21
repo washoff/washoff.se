@@ -2,9 +2,11 @@ function create(React, {css, StyleSheet}) {
   const styles = StyleSheet.create({
     responsiveContainer: {
       '@media (min-width: 720px)': {
-        margin: 'auto',
         width: 720
-      }
+      },
+      paddingLeft: 10,
+      paddingRight: 10,
+      margin: 'auto'
     }
   })
   function render({children}) {

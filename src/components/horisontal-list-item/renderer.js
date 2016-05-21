@@ -4,9 +4,15 @@ function create(React, {StyleSheet, css}) {
   function render({children, itemsCount}) {
     const styles = StyleSheet.create({
       listItem: {
-        display: 'inline-block',
-        width: `${HUNDRED_PERCENT / itemsCount}%`,
-        textAlign: 'center'
+        '@media (min-width: 600px)': {
+          width: `${HUNDRED_PERCENT / itemsCount}%`,
+          marginBottom: 0,
+          display: 'inline-block'
+        },
+        display: 'block',
+        width: '100%',
+        textAlign: 'center',
+        marginBottom: 50
       }
     })
     return (

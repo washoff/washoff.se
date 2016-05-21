@@ -26,8 +26,9 @@ function main() {
       fontFamily: theme.primaryFontFamily
     },
     logotype: {
-      height: 256,
-      width: 'auto',
+      maxWidth: 512,
+      width: '90%',
+      height: 'auto',
       margin: [0, 'auto'],
       display: 'block'
     },
@@ -44,27 +45,20 @@ function main() {
     quote: {
       fontFamily: theme.secondaryFontFamily
     },
+    serviceList: {
+      listStyleType: 'none',
+      margin: 0,
+      padding: 0
+    },
+    serviceListItem: {
+      display: 'inline-block',
+      width: '50%'
+    },
     neutralSection: {
       background: theme.neutralSectionBackgroundColor,
       paddingBottom: 15,
       paddingTop: 15,
       color: theme.primaryColor
-    },
-    section1: {
-      background: theme.section1BackgroundColor,
-      paddingBottom: 15,
-      paddingTop: 15,
-      color: theme.secondaryColor
-    },
-    section2: {
-      background: theme.section2BackgroundColor,
-      paddingBottom: 15,
-      paddingTop: 15
-    },
-    section3: {
-      background: theme.section3BackgroundColor,
-      paddingBottom: 15,
-      paddingTop: 15
     }
   })
   /* eslint-enable no-magic-numbers */
@@ -126,7 +120,36 @@ function main() {
           </p>
         </ResponsiveContainer>
         </div>
-         <div className={Aphrodite.css(styles.neutralSection)}>
+        <div className={Aphrodite.css(styles.neutralSection)}>
+        <ResponsiveContainer>
+          <h2>Tjänster</h2>
+            <ul className={Aphrodite.css(styles.serviceList)}>
+              {
+                [
+                  'Klotterkonsultering',
+                  'Rivning',
+                  'Klottersanering',
+                  'Lokalstäd',
+                  'Klotterskydd',
+                  'Flyttstäd',
+                  'Taktvätt',
+                  'Byggstäd',
+                  'Fasadtvätt',
+                  'Fordonsstäd',
+                  'Högtryckstvätt',
+                  'Snöskottning'
+                ].map(function onMap(serviceName) {
+                  return (
+                    <li key={serviceName} className={Aphrodite.css(styles.serviceListItem)}>
+                      {serviceName}
+                    </li>
+                  )
+                })
+              }
+            </ul>
+        </ResponsiveContainer>
+        </div>
+        <div className={Aphrodite.css(styles.neutralSection)}>
         <ResponsiveContainer>
           <img src={johnnyProfile} className={Aphrodite.css(styles.profile)} />
           <h2>Johnny Arstrand VD på Wash Off</h2>
