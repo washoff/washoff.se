@@ -7,23 +7,39 @@ import HoristontalListItemFactory from
   './components/horisontal-list-item/renderer'
 import LinkFactory from
   './components/link/renderer'
-import MainMenuFactory from
-  './components/main-menu/renderer'
-import MainSectionFactory from
-  './components/main-section/renderer'
+/* NOTE: Not in use yet. import MainMenuFactory from
+  './components/main-menu/renderer' */
 import React from 'react'
 import ReactDom from 'react-dom'
 import ResponsiveContainerFactory from
   './components/responsive-container/renderer'
 import ThemeFactory from
   './theme'
-// TODO: import logotype from './logotype.png'
+import johnnyProfile from './johnny-profile.jpg'
+import logotype from './logotype.png'
 
 function main() {
   const theme = ThemeFactory.create().theme
+  /* eslint-disable no-magic-numbers */
   const styles = Aphrodite.StyleSheet.create({
     app: {
       fontFamily: theme.primaryFontFamily
+    },
+    logotype: {
+      height: 256,
+      width: 'auto',
+      margin: [0, 'auto'],
+      display: 'block'
+    },
+    profile: {
+      height: 128,
+      width: 'auto',
+      borderStyle: 'solid',
+      borderWidth: 0,
+      borderRadius: '50%',
+      display: 'block',
+      marginLeft: 5,
+      borderColor: theme.primaryColor
     },
     quote: {
       fontFamily: theme.secondaryFontFamily
@@ -51,6 +67,7 @@ function main() {
       paddingTop: 15
     }
   })
+  /* eslint-enable no-magic-numbers */
   const HoristontalList = HoristontalListFactory.create(
       React, Aphrodite
     ).render
@@ -61,73 +78,70 @@ function main() {
   const Footer = FooterFactory.create(
     React, Aphrodite, theme, HoristontalList, HoristontalListItem, Link
   ).render
-  const MainMenu = MainMenuFactory.create(
+  /* TODO: const MainMenu = MainMenuFactory.create(
     React, Aphrodite, theme, HoristontalList, HoristontalListItem, Link
-  ).render
-  const MainSection = MainSectionFactory.create(React, Aphrodite, theme).render
+  ).render -MANI */
   const ResponsiveContainer = ResponsiveContainerFactory.create(
     React, Aphrodite, theme
   ).render
   ReactDom.render(
     <div className={Aphrodite.css(styles.app)}>
-        <MainMenu>
-        </MainMenu>
         <div className={Aphrodite.css(styles.neutralSection)}>
         <ResponsiveContainer>
-          <h2>
-            Klottersanering i Strängnäs
-          </h2>
-          <p>
-            Wash Off erbjuder högkvalitativ klottersanering i Strängnäs med omnejd.
-          </p>
-          </ResponsiveContainer>
-        </div>
-        <div className={Aphrodite.css(styles.section1)}>
-          <ResponsiveContainer>
-          <h1>
-            Wash Off
-          </h1>
+           <img src={logotype} className={Aphrodite.css(styles.logotype)}/>
           <h2 className={Aphrodite.css(styles.quote)}>
-            För att bra kvalitet lönar sig i längden.
+            Välkomna till Wash off!
           </h2>
           </ResponsiveContainer>
         </div>
         <div className={Aphrodite.css(styles.neutralSection)}>
         <ResponsiveContainer>
-          <h2>
-            Tjänster
-          </h2>
-          <div>
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin leo dolor, finibus et nibh in, finibus maximus eros. Nam nec egestas tortor. Maecenas rhoncus odio nec turpis iaculis tempus. Sed consequat eros in sem interdum fermentum. Sed maximus, orci at porttitor sagittis, neque nulla ornare nisl, non blandit diam ipsum et sapien. Nullam enim purus, laoreet ac hendrerit at, ullamcorper sed lectus. Nullam placerat erat a aliquet vehicula.
+            Med lång erfarenhet inom klottersanering och underhåll av fastigheter
+            så är vi ett av de mest ledande företagen inom klottersanering,
+            skuggsanering samt klotterskydd.
+            Vi hjälper dig att skydda din fastighet eller klottrat område.
+            Vi siktar mot ett renare Sverige fritt från skadegörelse
+            och strävar efter att göra det på ett miljövänligt sätt.
           </p>
-          <p>
-Ut vitae ipsum hendrerit, accumsan sem eu, accumsan arcu. Morbi ullamcorper, augue at sodales pharetra, neque neque maximus massa, a pulvinar odio libero ut nunc. Vestibulum non nulla libero. In mattis lectus sem, quis pharetra elit posuere vel. Etiam volutpat at nisl ut facilisis. Donec eleifend ipsum id lectus accumsan, nec mattis leo volutpat. Ut eu elit ac massa egestas rhoncus sit amet et nunc. Integer id accumsan augue. Ut euismod sollicitudin turpis quis mattis. Donec porta vitae eros sit amet consectetur.
-</p>
-<p>
-Sed quis molestie enim, a elementum augue. Vestibulum faucibus, est quis lobortis laoreet, lectus purus ullamcorper velit, ac molestie velit nunc quis nisi. In eget nisl sagittis, varius ipsum in, viverra nibh. Donec maximus quam ac lorem viverra tincidunt. Donec viverra augue lorem, vitae sagittis enim volutpat ut. Vivamus nulla metus, pulvinar sed elit nec, maximus tristique quam. Nunc eu commodo velit. Pellentesque eget sem hendrerit, luctus velit sit amet, sagittis nisl. In placerat porttitor orci vitae sagittis. Proin vel sapien pulvinar, aliquam velit ac, aliquam erat. Maecenas velit purus, pretium sit amet dictum ut, maximus sed odio. Donec vitae leo sit amet nunc faucibus cursus. Pellentesque faucibus ac felis nec ultrices. Vestibulum odio orci, sagittis sed ipsum ut, convallis elementum elit. Sed et ullamcorper purus. Etiam porttitor finibus lectus, vitae dapibus tortor mattis eget.
-</p>
-<p>
-Etiam nunc enim, fringilla a ex sit amet, eleifend sodales risus. Maecenas et semper sapien. Integer id justo ac lorem lacinia laoreet id sed purus. Phasellus sollicitudin ex dignissim diam lacinia lacinia. Etiam vitae ante ac nisi porta molestie sit amet a nisl. Nullam volutpat hendrerit velit id consequat. Aliquam eleifend lorem augue, a tempus metus ullamcorper quis. Morbi commodo consequat nisl, eu sagittis massa rhoncus ut. Suspendisse fringilla nisl turpis, eu commodo sem porta rutrum.
-</p>
-<p>
-Suspendisse rhoncus in dolor ac ullamcorper. Sed vel placerat augue, nec tempus elit. Aliquam sagittis libero quis massa scelerisque, quis luctus nisl porttitor. Nunc blandit fermentum risus, eget pretium velit tincidunt non. Suspendisse interdum tincidunt tempus. Nullam vel eleifend massa. Donec ante tortor, consequat quis mauris ac, pretium luctus dolor.
-</p>
-          </div>
-          </ResponsiveContainer>
+        </ResponsiveContainer>
         </div>
-        <div className={Aphrodite.css(styles.section1)}>
+        <div className={Aphrodite.css(styles.neutralSection)}>
         <ResponsiveContainer>
-          <h2>
-            Vill du veta mer?
-          </h2>
+        <h2>Varför välja oss?</h2>
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin leo dolor, finibus et nibh in, finibus maximus eros. Nam nec egestas tortor. Maecenas rhoncus odio nec turpis iaculis tempus. Sed consequat eros in sem interdum fermentum. Sed maximus, orci at porttitor sagittis, neque nulla ornare nisl, non blandit diam ipsum et sapien. Nullam enim purus, laoreet ac hendrerit at, ullamcorper sed lectus. Nullam placerat erat a aliquet vehicula.
+           Vi tar bort skuggor som kan finnas kvar efter tidigare saneringar.
+           Vi lägger ner den lilla extra tiden som krävs för att få en
+           99% borttagning av skadegörelse.
+            Vi har ett brett utbud av tjänster vilket innebär att man kan
+            anlita ett företag för olika typer av arbeten inom
+            underhåll av fastigheter.
+            Efter sanering erbjuder vi också återställning av ytor på de
+            skadade områdena samt klotterskydd som förhindrar större
+            skada vid sanering.
+            Vi är måna om våra kunder och lägger ner kärlek i det
+            arbete vi utför.
+            Ni kommer ställa er frågan, var fanns klottret?
+            Kan en fastighet se så ren ut?
           </p>
+        </ResponsiveContainer>
+        </div>
+         <div className={Aphrodite.css(styles.neutralSection)}>
+        <ResponsiveContainer>
+          <img src={johnnyProfile} className={Aphrodite.css(styles.profile)} />
+          <h2>Johnny Arstrand VD på Wash Off</h2>
           <p>
-Ut vitae ipsum hendrerit, accumsan sem eu, accumsan arcu. Morbi ullamcorper, augue at sodales pharetra, neque neque maximus massa, a pulvinar odio libero ut nunc. Vestibulum non nulla libero. In mattis lectus sem, quis pharetra elit posuere vel. Etiam volutpat at nisl ut facilisis. Donec eleifend ipsum id lectus accumsan, nec mattis leo volutpat. Ut eu elit ac massa egestas rhoncus sit amet et nunc. Integer id accumsan augue. Ut euismod sollicitudin turpis quis mattis. Donec porta vitae eros sit amet consectetur.
-</p>
-          </ResponsiveContainer>
+            Jag är en person med glimten i ögat och ger det lilla
+            extra till kunden.
+            Jag är målinriktad och ser inga problem utan bara möjligheter.
+            Jag gillar att ha många bollar i luften och när jag gör något
+            så gör jag det till 110%. Jag har lärt mig genom livet att
+            hårt arbete lönar sig och vill alltid göra mitt bästa
+            gentemot kunden.
+            Är en kärleksfull familjefar som gärna sprider min
+            glädje till alla runt omkring mig.
+          </p>
+        </ResponsiveContainer>
         </div>
         <Footer>
         </Footer>

@@ -16,7 +16,7 @@ function create() {
   const theme = {
     normalSpacing: 5,
     largeSpacing: 15,
-    primaryColor: 'black',
+    primaryColor: '#2f4f4f',
     primaryBackgroundColor: 'white',
     secondaryColor: 'white',
     secondaryBackgroundColor: '#354458',
