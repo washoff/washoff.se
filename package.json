@@ -10,7 +10,8 @@
     "build:copy": "cp src/index.html lib/",
     "prebuild": "npm run build:clean",
     "build": "webpack",
-    "postbuild": "npm run build:copy"
+    "postbuild": "npm run build:copy",
+    "deploy": "aws s3 sync lib s3://washoff-website/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
   },
   "repository": {
     "type": "git",
